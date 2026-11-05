@@ -1,0 +1,11 @@
+{
+  "name": "eduplus-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EduPulse AI - Student Result Analysis & Devin AI Diagnosis System",
+  "scripts": {
+    "build": "bash vercel-build.sh",
+    "vercel-build": "bash vercel-build.sh"
+  }
+}
+
