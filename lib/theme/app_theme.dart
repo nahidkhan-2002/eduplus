@@ -52,8 +52,7 @@ class AppTheme {
   );
 
   static ThemeData get darkTheme {
-    final baseTextTheme = ThemeData.dark().textTheme;
-    final textTheme = GoogleFonts.plusJakartaSansTextTheme(baseTextTheme).apply(
+    final textTheme = GoogleFonts.plusJakartaSansTextTheme().apply(
       bodyColor: textPrimary,
       displayColor: textPrimary,
     );

@@ -5,7 +5,6 @@ import '../../models/subject.dart';
 import '../../providers/gpa_provider.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/empty_state.dart';
-import '../../widgets/glass_container.dart';
 import '../../widgets/stat_card.dart';
 import 'widgets/cgpa_chart.dart';
 import 'widgets/semester_card.dart';

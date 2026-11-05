@@ -25,16 +25,16 @@ class DevinAiEvalScreen extends StatefulWidget {
 class _DevinAiEvalScreenState extends State<DevinAiEvalScreen> {
   void _pickQuestionImage(EvaluationProvider provider) async {
     try {
-      final result = await FilePicker.platform.pickFiles(
+      final files = await FilePicker.pickFiles(
         type: FileType.custom,
         allowedExtensions: ['png', 'jpg', 'jpeg', 'pdf'],
       );
-      if (result != null && result.files.isNotEmpty) {
-        provider.setCustomQuestionFile(result.files.first.name);
+      if (files.isNotEmpty) {
+        provider.setCustomQuestionFile(files.first.name);
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Uploaded Question Sheet: ${result.files.first.name}'),
+              content: Text('Uploaded Question Sheet: ${files.first.name}'),
               backgroundColor: AppTheme.accentTeal,
             ),
           );
@@ -47,22 +47,25 @@ class _DevinAiEvalScreenState extends State<DevinAiEvalScreen> {
 
   void _pickScriptImage(EvaluationProvider provider) async {
     try {
-      final result = await FilePicker.platform.pickFiles(
+      final files = await FilePicker.pickFiles(
         type: FileType.custom,
         allowedExtensions: ['png', 'jpg', 'jpeg', 'pdf'],
       );
-      if (result != null && result.files.isNotEmpty) {
-        provider.setCustomScriptFile(result.files.first.name);
+      if (files.isNotEmpty) {
+        provider.setCustomScriptFile(files.first.name);
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Uploaded Answer Script: ${result.files.first.name}'),
+              content: Text('Uploaded Answer Script: ${files.first.name}'),
               backgroundColor: AppTheme.accentTeal,
             ),
           );
         }
       }
     } catch (_) {
+      // Fallback
+    }
+  }
       // Fallback
     }
   }
