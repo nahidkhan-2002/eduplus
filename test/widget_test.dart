@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:eduplus/main.dart';
-import 'package:eduplus/models/semester.dart';
 import 'package:eduplus/models/subject.dart';
 import 'package:eduplus/providers/auth_provider.dart';
 import 'package:eduplus/providers/evaluation_provider.dart';
