@@ -122,3 +122,4 @@ class CalculationService {
     return allSubjects.take(limit).toList();
   }
 }
+

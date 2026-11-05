@@ -158,3 +158,4 @@ class ScriptEvaluation {
         customScriptImageName: json['customScriptImageName'] as String?,
       );
 }
+

@@ -222,3 +222,4 @@ class _SubjectDialogState extends State<SubjectDialog> {
     );
   }
 }
+

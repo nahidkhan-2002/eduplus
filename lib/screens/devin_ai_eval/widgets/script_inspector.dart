@@ -359,3 +359,4 @@ class KhataPaperPainter extends CustomPainter {
   bool shouldRepaint(covariant KhataPaperPainter oldDelegate) =>
       oldDelegate.presetId != presetId;
 }
+

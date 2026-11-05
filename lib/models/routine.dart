@@ -234,3 +234,4 @@ class StudyRoutine {
         streakDays: (json['streakDays'] as num?)?.toInt() ?? 5,
       );
 }
+

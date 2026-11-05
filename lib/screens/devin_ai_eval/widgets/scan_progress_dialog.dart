@@ -184,3 +184,4 @@ class ScanProgressDialog extends StatelessWidget {
     );
   }
 }
+
