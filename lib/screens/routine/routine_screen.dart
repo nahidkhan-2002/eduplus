@@ -407,7 +407,7 @@ class RoutineScreen extends StatelessWidget {
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: routine.pomodoroSlots.length,
-                      separatorBuilder: (_, __) => const SizedBox(height: 10),
+                      separatorBuilder: (ctx, idx) => const SizedBox(height: 10),
                       itemBuilder: (context, index) {
                         final slot = routine.pomodoroSlots[index];
                         return PomodoroSlotTile(
@@ -475,7 +475,7 @@ class RoutineScreen extends StatelessWidget {
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: routine.spacedRepetitionItems.length,
-                          separatorBuilder: (_, __) => const SizedBox(height: 12),
+                          separatorBuilder: (ctx, idx) => const SizedBox(height: 12),
                           itemBuilder: (context, index) {
                             final item = routine.spacedRepetitionItems[index];
                             return SpacedRepetitionCard(

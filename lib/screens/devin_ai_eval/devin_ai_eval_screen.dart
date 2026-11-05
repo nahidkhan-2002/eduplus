@@ -1,7 +1,6 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../models/evaluation.dart';
 import '../../providers/evaluation_provider.dart';
 import '../../providers/routine_provider.dart';
 import '../../services/devin_ai_service.dart';
@@ -66,16 +65,13 @@ class _DevinAiEvalScreenState extends State<DevinAiEvalScreen> {
       // Fallback
     }
   }
-      // Fallback
-    }
-  }
 
   void _startAnalysis(EvaluationProvider provider) {
     showDialog(
       context: context,
       barrierDismissible: false,
       builder: (ctx) => Consumer<EvaluationProvider>(
-        builder: (_, prov, __) => ScanProgressDialog(provider: prov),
+        builder: (c, prov, child) => ScanProgressDialog(provider: prov),
       ),
     );
 
@@ -331,7 +327,7 @@ class _DevinAiEvalScreenState extends State<DevinAiEvalScreen> {
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount: currentEval.pinpoints.length,
-                        separatorBuilder: (_, __) => const SizedBox(height: 10),
+                        separatorBuilder: (ctx, idx) => const SizedBox(height: 10),
                         itemBuilder: (context, index) {
                           final pinpoint = currentEval.pinpoints[index];
                           final isSelected = evalProv.selectedPinpoint?.id == pinpoint.id;
@@ -412,7 +408,7 @@ class _DevinAiEvalScreenState extends State<DevinAiEvalScreen> {
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: currentEval.weakAreas.length,
-                      separatorBuilder: (_, __) => const SizedBox(height: 12),
+                      separatorBuilder: (ctx, idx) => const SizedBox(height: 12),
                       itemBuilder: (context, index) {
                         final area = currentEval.weakAreas[index];
                         final isCritical = area.severity.toLowerCase() == 'critical';
