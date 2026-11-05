@@ -6,7 +6,6 @@ import '../../providers/gpa_provider.dart';
 import '../../providers/routine_provider.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/glass_container.dart';
-import '../../widgets/grade_badge.dart';
 import '../../widgets/pulse_button.dart';
 import '../../widgets/stat_card.dart';
 import '../calculator/widgets/cgpa_chart.dart';

@@ -283,7 +283,7 @@ class GpaCalculatorScreen extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: semesters.length,
-                separatorBuilder: (_, __) => const SizedBox(height: 18),
+                separatorBuilder: (ctx, idx) => const SizedBox(height: 18),
                 itemBuilder: (context, index) {
                   final sem = semesters[index];
                   return SemesterCard(
