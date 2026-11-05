@@ -116,6 +116,8 @@ class EvaluationProvider extends ChangeNotifier {
       _scanProgress = p / 100.0;
       notifyListeners();
     }
+    _scanProgress = 1.0;
+    notifyListeners();
 
     await Future.delayed(const Duration(milliseconds: 250));
 

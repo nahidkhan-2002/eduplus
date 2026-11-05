@@ -59,14 +59,15 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color: AppTheme.slateBg,
-          image: DecorationImage(
-            image: NetworkImage(
-              'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop',
-            ),
-            fit: BoxFit.cover,
-            opacity: 0.05,
+          gradient: RadialGradient(
+            center: const Alignment(0.6, -0.6),
+            radius: 1.2,
+            colors: [
+              AppTheme.primaryIndigo.withValues(alpha: 0.12),
+              AppTheme.slateBg,
+            ],
           ),
         ),
         child: Center(
@@ -79,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   // Logo & Brand Header
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
                         padding: const EdgeInsets.all(12),
@@ -101,48 +102,52 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       const SizedBox(width: 14),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              const Text(
-                                'EduPulse',
-                                style: TextStyle(
-                                  fontSize: 28,
-                                  fontWeight: FontWeight.w900,
-                                  letterSpacing: -0.8,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              const SizedBox(width: 6),
-                              Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-                                decoration: BoxDecoration(
-                                  color: AppTheme.accentTeal.withValues(alpha: 0.2),
-                                  borderRadius: BorderRadius.circular(6),
-                                  border: Border.all(color: AppTheme.accentTeal),
-                                ),
-                                child: const Text(
-                                  'AI',
+                      Flexible(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Text(
+                                  'EduPulse',
                                   style: TextStyle(
-                                    color: AppTheme.accentTealGlow,
-                                    fontSize: 12,
+                                    fontSize: 26,
                                     fontWeight: FontWeight.w900,
+                                    letterSpacing: -0.8,
+                                    color: Colors.white,
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          const Text(
-                            'Result Analytics & Devin AI Diagnosis',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: AppTheme.textSecondary,
-                              fontWeight: FontWeight.w500,
+                                const SizedBox(width: 6),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
+                                  decoration: BoxDecoration(
+                                    color: AppTheme.accentTeal.withValues(alpha: 0.2),
+                                    borderRadius: BorderRadius.circular(6),
+                                    border: Border.all(color: AppTheme.accentTeal),
+                                  ),
+                                  child: const Text(
+                                    'AI',
+                                    style: TextStyle(
+                                      color: AppTheme.accentTealGlow,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        ],
+                            const Text(
+                              'Result Analytics & Devin AI Diagnosis',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppTheme.textSecondary,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -280,11 +285,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           const SizedBox(height: 16),
 
                           // Switch to Sign Up
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          Wrap(
+                            alignment: WrapAlignment.center,
+                            crossAxisAlignment: WrapCrossAlignment.center,
                             children: [
                               const Text(
-                                "Don't have an account?",
+                                "Don't have an account? ",
                                 style: TextStyle(
                                   color: AppTheme.textSecondary,
                                   fontSize: 13,

@@ -51,7 +51,9 @@ class AppTheme {
   );
 
   static ThemeData get darkTheme {
-    final textTheme = GoogleFonts.plusJakartaSansTextTheme().apply(
+    final baseTextTheme = ThemeData.dark().textTheme;
+    final textTheme = baseTextTheme.apply(
+      fontFamily: 'Plus Jakarta Sans',
       bodyColor: textPrimary,
       displayColor: textPrimary,
     );
